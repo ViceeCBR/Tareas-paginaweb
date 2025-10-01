@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        margin: 0px;
+        background-color: white;
+    }
+.Titulo{
+    margin: auto;
+    display: flex;
+    margin-top: 100px;
+    margin-bottom: 15px;
+}
+.Titulo h1{
+    color: rgb(0, 0, 0);
+    display: flex;
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.Barra input{
+   top: 100px ;
+   height: 40px;
+   width: 250px;
+   border-radius: 10px;
+   font-size: 25px;
+   display: flex;
+   margin: auto;
+}
+.contenedor{
+    margin-top: 40px;
+}
+.contenedor button{
+    width: 250px;
+    height: 40px;
+    margin: auto; /*Lo centra */
+    align-items: center;
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    border: solid rgb(0, 57, 179);
+    border-radius: 10px;
+    color: white;
+    background-color: rgb(0, 66, 209);
+    cursor: pointer; /* Modifica puntero*/
+    transition: 0.3s; /* Animacion boton*/
+    text-align: center;
+    justify-content: center;
+}
+        
+        .contenedor button:hover{ /*Animacion al ponerse*/
+            background-color: rgb(1, 75, 235);
+            scale: 1.02;
+            
+        }
+        .contenedor button:active{ /*Animacion al apretar*/
+            background-color: rgb(0, 45, 141);
+            scale: 1.03;
+            font-size: 31px;
+        }
+.TResultado{
+    margin: auto;
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+.TResultado h1{
+    color: rgb(0, 0, 0);
+    display: flex;
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+}
+.Resultado{
+    margin: auto;
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+.Resultado h1{
+    color: rgb(0, 66, 209);
+    display: flex;
+    margin: auto;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 85px;
+}
+.Borde{
+    margin: auto;
+    border: 3px solid rgb(187, 187, 187); 
+    border-radius: 20px;
+    width: 500px;            
+    height: 600px; 
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+</style>
+<body>
+    <div class="Borde">
+    <div class="Agrupar">
+    <div class="Titulo">
+        <h1>Adivinador de nombre</h1>
+    </div>
+    <div class="Barra">
+        <input type="text" id="Texto" placeholder="Ingresa Tu Nombre">
+    </div>
+    <div class="contenedor">
+        <button id="boton">Adivinar</button>
+    </div>
+    <div class="TResultado">
+     <h1>Tu nombre es:</h1>
+        </div>
+     <div class="Resultado">
+        <h1 id="parrafo"></h1>
+     </div>
+      </div>
+      </div>
+     <script>
+        document.getElementById('boton').addEventListener('click', preguntarNumero)
+    
+        function preguntarNumero(){
+            const val = document.getElementById('Texto').value
+            document.getElementById('parrafo').innerHTML = val
+        }
+    </script>
+</body>
+</html>
