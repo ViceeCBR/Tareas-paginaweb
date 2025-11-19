@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea7</title>
+    <style>
+        body{
+            cursor: none;
+            height: 100vh;
+        }
+        .mouse{
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: rgb(180, 0, 0);
+            transform: translate(-50%, -50%);
+            border-radius: 10%;
+        }
+    </style>
+</head>
+<body>
+    <div class="mouse"></div>
+    <div class="mouse"></div>
+    <div class="mouse"></div>
+    <div class="mouse"></div>
+    <div class="mouse"></div>
+    <div class="mouse"></div>
+    <script>
+        let estela =[]
+        document.body.addEventListener("mousemove", (e) => {
+            const objs = document.getElementsByClassName ("mouse")
+            estela.push([e.clientX, e.clientY])
+            if(estela.length > objs.length) estela.shift()
+            for(let i = 0; i < objs.length; i++){
+        objs[i].style.top = estela[i][1] + `px`
+        objs[i].style.left = estela[i][0] + `px`
+            }
+        })
+    </script>
+</body>
+</html>
